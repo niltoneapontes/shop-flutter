@@ -22,7 +22,9 @@ class ProductOverviewPage extends StatelessWidget {
               mainAxisSpacing: 10,
             ),
             itemBuilder: (ctx, index) {
-              return ProductItem(product: loadedProducts[index]);
+              return ProductItem(
+                product: loadedProducts[index],
+                );
             }));
   }
 }

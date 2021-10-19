@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:shop/pages/counter_page.dart';
-import 'package:shop/pages/product_detail_page.dart';
 import 'package:shop/pages/product_overview_page.dart';
 import 'package:shop/providers/counter.dart';
-import 'package:shop/utils/app_routes.dart';
+import 'package:shop/routes/app_routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,9 +20,8 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Lato',
         ),
         home: ProductOverviewPage(),
-        routes: {
-          AppRoutes.PRODUCT_DETAIL: (ctx) => CounterPage(),
-        },
+        routes: AppRoutes.routes,
+        initialRoute:AppRoutes.ProductOverviewPageRoute ,
         debugShowCheckedModeBanner: false,
       ),
     );
