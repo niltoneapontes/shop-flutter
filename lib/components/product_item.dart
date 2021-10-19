@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop/models/product.dart';
-import 'package:shop/pages/product_detail_page.dart';
-import 'package:shop/utils/app_routes.dart';
+import 'package:shop/routes/app_routes.dart';
 
 class ProductItem extends StatelessWidget {
   final Product product;
@@ -20,7 +19,7 @@ class ProductItem extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pushNamed(
-                  AppRoutes.PRODUCT_DETAIL,
+                  AppRoutes.ProductDetailPageRoute,
                   arguments: product,
                 );
               }),
@@ -32,7 +31,7 @@ class ProductItem extends StatelessWidget {
                 Icons.favorite,
                 size: 16,
               ),
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.secondary,
             ),
             title: Text(product.title, textAlign: TextAlign.center),
             trailing: IconButton(
@@ -41,7 +40,7 @@ class ProductItem extends StatelessWidget {
                 Icons.shopping_cart,
                 size: 16,
               ),
-              color: Theme.of(context).accentColor,
+              color: Theme.of(context).colorScheme.secondary,
             ),
           )),
     );
